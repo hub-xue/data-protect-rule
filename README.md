@@ -2,7 +2,7 @@
 
 **会话级数据用途与反绕过护栏 —— 一个零依赖、仅手动调用的约束 Skill，锁定「用户信息不得用于分析/产品改进/模型训练」与「绕过行为须主动识别并报告」两条底层约束**
 
-[SKILL.md](./SKILL.md) · [安装说明](./INSTALL.md) · [条款基线](./references/clause-baseline.md) · [绕过模式目录](./references/bypass-patterns.md)
+[English](./README_EN.md) · [SKILL.md](./SKILL.md) · [安装说明](./INSTALL.md) · [条款基线](./references/clause-baseline.md) · [绕过模式目录](./references/bypass-patterns.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
