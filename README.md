@@ -4,7 +4,7 @@
 
 [English](./README_EN.md) · [SKILL.md](./SKILL.md) · [安装说明](./INSTALL.md) · [条款基线](./references/clause-baseline.md) · [绕过模式目录](./references/bypass-patterns.md)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 
 ---
 
@@ -58,6 +58,6 @@ data-protect-rule/
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 
-MIT。欢迎 PR。
+CC BY-NC 4.0（署名-非商业性使用）。允许自由复制、修改与分发，但须署名，且不得用于商业目的。
