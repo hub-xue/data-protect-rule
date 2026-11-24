@@ -20,11 +20,13 @@ This skill acts as a constraint anchor in the session. It produces no feature; i
 
 ## Core Mechanisms
 
-- **Dual-test criterion**: purpose (this delivery vs reusable samples) + beneficiary (the user vs the provider/third party) — both must pass;
-- **Bypass-pattern catalog**: five pattern classes P1–P5 (direct denial / purpose substitution / technical wrapping / rule rewriting / temporal evasion) plus a gray-zone list;
+- **Dual-test criterion**: purpose (this delivery vs reusable samples) + beneficiary in three classes (the user / the user's organization / the provider or third party) — both must pass; organization-class cases go to a gray-zone question for explicit user ruling;
+- **Tool egress gating**: writing files, network requests, handing to tools, or delegating to other agents all count as information flows and must pass the dual test first; writing to a user-specified path does not authorize further external sending;
+- **Subagent propagation**: delegated subtasks must carry a constraint summary; if compliance cannot be confirmed, do not delegate; re-check returned results;
+- **Bypass-pattern catalog**: six pattern classes P1–P6 (direct denial / purpose substitution / technical wrapping / rule rewriting / temporal evasion / tool egress) plus a gray-zone list;
 - **Five-stage SOP**: anchor → execute → detect → interrupt-and-report → close (S1–S5);
 - **Constraint-release procedure**: must state all three of "which clause + scope + validity period"; any missing item means not released;
-- **Verification script**: `scripts/verify_baseline.py` performs verbatim comparison of clauses A/B plus a 7-item semantic-invariant scan.
+- **Verification scripts**: `scripts/verify_baseline.py` performs verbatim comparison of clauses A/B plus a 7-item semantic-invariant scan; `scripts/test_cases.py` runs 10 routing regression cases.
 
 ## Quick Start
 
@@ -42,12 +44,13 @@ Once installed, invoke `/data-protect-rule` manually in a session (auto-invocati
 
 ```
 data-protect-rule/
-├── SKILL.md                     # Main file: clauses A/B, interpretation layer, SOP, applicability, change control
+├── SKILL.md                     # Main file: clauses A/B, interpretation layer (dual test / egress gating / subagent propagation), SOP, change control
 ├── references/
 │   ├── clause-baseline.md       # Verbatim clause baseline, 7 semantic invariants, comparison method, changelog
-│   └── bypass-patterns.md       # Bypass-pattern catalog, severity levels, report templates, missed-detection log
+│   └── bypass-patterns.md       # Bypass-pattern catalog (P1–P6), severity levels, report templates, missed-detection log
 └── scripts/
-    └── verify_baseline.py       # Baseline verification script (hard + soft checks)
+    ├── verify_baseline.py       # Baseline verification script (hard + soft checks)
+    └── test_cases.py            # Routing regression tests (10 cases + rule anchor checks)
 ```
 
 ## Use Cases

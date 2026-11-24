@@ -132,6 +132,18 @@ def main():
         else:
             print("  [OK]   %s %s" % (code, desc))
 
+    # 1.3.0 新增执行条款（软性存在性检查，不影响退出码）
+    for label, token in (
+        ("工具出口门控", "工具出口门控"),
+        ("受益方三分类", "用户所属组织"),
+        ("子代理传递", "不可确认则不委派"),
+    ):
+        if token in text:
+            print("  [OK]   %s 已存在" % label)
+        else:
+            warnings += 1
+            print("  [WARN] %s 缺失（关键词未找到）" % label)
+
     # 调用方式（配置项，不属于基线约束，仅作提示）
     if "disable-model-invocation: true" in text:
         print("  [OK]   调用方式 仅手动（自动触发已关闭）")
